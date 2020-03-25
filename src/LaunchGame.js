@@ -19,33 +19,46 @@ exports.listen = () => {
 const launchGame = ( nickname ) => {
     const { Client, Authenticator } = require('minecraft-launcher-core');
     const launcher = new Client();
+    const request = require("request");
+    let settings = require("../client-settings.json")
+    let version = require("../minecraft/version.json").version
+    let ram = settings.game.ram
 
-    let opts = {
-        clientPackage: "null",
-        authorization: Authenticator.getAuth( nickname ), 
-        root: "./minecraft",
-        os: "windows",
-        // version: {
-        //     "number": "1.12.2",
-        //     "type": "release",
-        // },
-        "version": {
-            number: "1.12.2",
-            type: "release",
-        },
-        forge: "./minecraft/modpack.jar",
-        memory: {
-            max: "6000",
-            min: "4000"
-        },
-        
-    }
-     
-    launcher.launch(opts);
-     
-    launcher.on('debug', (e) => console.log(e));
-    launcher.on('data', (e) => console.log(e));
+    //checking version
+    request.get("https://pobieranieag.herokuapp.com/version_modpack_latest", (err, res, body) => {
+        let json = JSON.parse(body)
+        let latestVersion = json.version
+        let cl = null;
+        if ( version != latestVersion ) {
+            cl = "http://pobieranieag.herokuapp.com/download_modpack_latest"
+        }
 
+        let opts = {
+            clientPackage: cl,
+            authorization: Authenticator.getAuth( nickname ), 
+            root: "./minecraft",
+            os: "windows",
+            // version: {
+            //     "number": "1.12.2",
+            //     "type": "release",
+            // },
+            "version": {
+                number: "1.12.2",
+                type: "release",
+            },
+            forge: "./minecraft/forge.jar",
+            memory: {
+                max: ram,
+                min: Math.round( ram / 1.5 )
+            },
+            
+        }
+         
+        launcher.launch(opts);
+         
+        launcher.on('debug', (e) => console.log(e));
+        launcher.on('data', (e) => console.log(e));
+    })  
 }
 
 

@@ -1,10 +1,1 @@
-{
-    "client": {
-        "width": 1280,
-        "height": 720
-    },
-    "game": {
-        "ram": 4096
-    }
-
-}
+{"client":{"width":1280,"height":720},"game":{"ram":"3338"}}

@@ -28,9 +28,9 @@ function proceed()  {
             nickname: $('#login-username-input').value,
         }
     }))
-    const remote = require('electron').remote
-    let w = remote.getCurrentWindow()
-    w.hide()
+    // const remote = require('electron').remote
+    // let w = remote.getCurrentWindow()
+    // w.hide()
 }
 
 $('#login-btn').addEventListener('click', proceed )
@@ -38,6 +38,7 @@ $('#login-btn').addEventListener('click', proceed )
 function openSettings() {
     $("#main").hidden = true
     $("#settings").hidden = false
+    loadSettings()
 }
 
 function openMainscreen() {
@@ -48,3 +49,55 @@ function openMainscreen() {
 $("#menu-btn").addEventListener("click", openSettings)
 $("#back-btn").addEventListener("click", openMainscreen)
 
+$("#select-ram").addEventListener("change", () => {     
+     switch ( $("#select-ram").value ) {
+         case "8":
+            $("#ram-range").value = 3140;
+            $("#ram-label").innerHTML = $("#ram-range").value+" <b>MB RAM'u</b>"
+            break;
+        case "12":
+            $("#ram-range").value = 4096;
+            $("#ram-label").innerHTML = $("#ram-range").value+" <b>MB RAM'u</b>"
+            break;
+        case "16":
+            $("#ram-range").value = 6144;
+            $("#ram-label").innerHTML = $("#ram-range").value+" <b>MB RAM'u</b>"
+            break;
+         default:
+            $("#ram-range").value = 3140;
+            $("#ram-label").innerHTML = $("#ram-range").value+" <b>MB RAM'u</b>"
+             break;
+     }
+})
+
+$("#ram-range").addEventListener("input", () => {
+    $("#ram-label").innerHTML = $("#ram-range").value+" <b>MB RAM'u</b>"
+})
+
+
+
+$("#save-btn").addEventListener("click", () => {
+    const { ipcRenderer } = require('electron')
+    ipcRenderer.sendSync('synchronous-message', 
+    { 
+        msgtype: "updateSettings",
+        body: {
+            "client": {
+                "width": 1280,
+                "height": 720
+            },
+            "game": {
+                "ram": $("#ram-range").value
+            }
+        }
+    })
+    
+})
+
+ 
+const loadSettings = () => {
+    $("#ram-range").value = require("../../client-settings.json").game.ram
+    $("#ram-label").innerHTML = $("#ram-range").value+" <b>MB RAM'u</b>"
+}
+
+loadSettings()

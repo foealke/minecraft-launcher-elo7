@@ -13,10 +13,10 @@
     <div id="bg-image"></div>
 
 
-    <div class="animated fadeIn"  id="main" style="width: 100%; height: 100%; margin: 0; padding: 0;">
+    <div  class="animated fadeIn"  id="main" style="width: 100%; height: 100%; margin: 0; padding: 0;">
         <form action="javascript:proceed()" style="margin: 0; display: flex; flex-direction: column;  justify-content: center; align-items: center; height: 100%; width: 40%; background-color: black; opacity: 0.6;">
             <div  style="position: fixed; top: 5vh; left: 3vh "> <img id="menu-btn" src="./resources/imgs/menu.png" alt="" style="height: 6vh;"> </div>
-            <div style="font-size: 5vh; color: white; margin-bottom: 10vh;"><b>ELO7</b>.GAMES</div>
+            <div style="font-size: 5vh; color: white; margin-bottom: 10vh;"> <img src="./resources/imgs/ICON.png" style="height: 10vh;" alt=""> <b>ELO7</b>.GAMES</div>
             <input  id="login-username-input" type="text" class="form-control login-form" placeholder="Nickname" aria-label="Username">
             <button id="login-btn" style="width: 30vw; margin: 7px;" type="button" class="btn btn-dark">Graj</button>
             <div id="error-element" style="color: red;"> </div>
@@ -31,10 +31,27 @@
         
     </div>
 
-    <div class="animated" hidden id="settings" style="width: 100%; height: 100%; margin: 0; padding: 0; background-color: black; opacity: 0.6;">
+    <div hidden class="animated"  id="settings" style="width: 100%; height: 100%; margin: 0; padding: 0; background-color: black; opacity: 0.6;">
         <div style="position: fixed; top: 5vh; left: 3vh "> <img id="back-btn" src="./resources/imgs/back.png" alt="" style="height: 6vh;"> </div>
+        <div id="settings-container" style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 100%; height: 100%;">
+            <div style="color: white; font-size: 50px;"> <b>Ustawienia</b></div>
+            <div style="margin-top: 10vh;">
+                <form>
+                    <div class="form-group">
+                      <label style="color: white; text-align: right; width: 20vw;" for="formControlRange" id="ram-label">4096 <b>MB RAM'u</b></label> <br>
+                      <input id="ram-range" min="2500" max="8125" value="4096" style="width: 20vw;" type="range"> <br>
+                      <select class="custom-select" id="select-ram" style="background-color: transparent; width: 20vw;">
+                        <option selected value="8">Preset dla osób z 8-12GB RAM'u</option>
+                        <option value="12">Preset dla osób z 12-16GB RAM'u</option>
+                        <option value="16">Preset dla osób z 16+GB RAM'u</option>
+                      </select>
+                    </div>
+                  </form>
+            </div>
+            <button id="save-btn" style="width: 20vw; margin-top: 20vh;" type="button" class="btn btn-dark">Zapisz</button>
+        </div>
     </div>
-    <div style="position: absolute; color: white; right: 10px; bottom: 10px; font-size: 12px; opacity: 0.5;">Created and open-sourced by Antoni Gles <a href="javascript:openGitHub()">GitHub</a></div>
+    <div style="position: absolute; color: white; right: 10px; bottom: 10px; font-size: 12px; opacity: 0.5git ;">Created and open-sourced by Antoni Gles <a href="javascript:openGitHub()">GitHub</a></div>
     
 </body>
 <script src="./resources/js/utils.js"></script>

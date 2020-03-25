@@ -18,8 +18,11 @@ const createWindow = () => {
         }
     })
     win.loadFile('./assets/main.html')
+
+    //Service workers
     require('./Auth.js').listen()
     require('./LaunchGame.js').listen()
+    require('./Settings.js').listen()
 
 }
 

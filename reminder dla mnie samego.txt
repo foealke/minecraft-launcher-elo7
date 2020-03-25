@@ -1,4 +1,0 @@
-- wrzucilem juz paczke .zip'a na google drive'a
-- nie testowalem zipa w paczce
-- skonczylem na robieniu ustawien
-- fadeinowanie jest git juz zostawiam
