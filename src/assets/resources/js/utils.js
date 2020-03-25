@@ -43,3 +43,11 @@ function animateCSS(element, animationName, callback) {
 
     node.addEventListener('animationend', handleAnimationEnd)
 }
+
+
+
+function openGitHub() {
+    const { shell } = require('electron')
+
+    shell.openExternal('https://github.com/foealke/minecraft-launcher-elo7')
+}
