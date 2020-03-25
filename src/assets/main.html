@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELO7 MC Launcher</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/style/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./resources/style/animate.css">
+</head>
+<body>
+    <div id="bg-image"></div>
+
+
+    <div class="animated fadeIn"  id="main" style="width: 100%; height: 100%; margin: 0; padding: 0;">
+        <form action="javascript:proceed()" style="margin: 0; display: flex; flex-direction: column;  justify-content: center; align-items: center; height: 100%; width: 40%; background-color: black; opacity: 0.6;">
+            <div  style="position: fixed; top: 5vh; left: 3vh "> <img id="menu-btn" src="./resources/imgs/menu.png" alt="" style="height: 6vh;"> </div>
+            <div style="font-size: 5vh; color: white; margin-bottom: 10vh;"><b>ELO7</b>.GAMES</div>
+            <input  id="login-username-input" type="text" class="form-control login-form" placeholder="Nickname" aria-label="Username">
+            <button id="login-btn" style="width: 30vw; margin: 7px;" type="button" class="btn btn-dark">Graj</button>
+            <div id="error-element" style="color: red;"> </div>
+            <div id="spinner-loader" hidden>
+                <div style="margin: 35px;" class="spinner-border text-light" role="status">
+                </div>
+                <div style="color: rgb(224, 224, 224); margin-top: -3vh;"> Uruchamianie gry... </div>
+            </div>
+        </form>
+        <div id="console">
+        </div>
+    </div>
+
+    <div class="animated" hidden id="settings" style="width: 100%; height: 100%; margin: 0; padding: 0; background-color: black; opacity: 0.6;">
+        <div style="position: fixed; top: 5vh; left: 3vh "> <img id="back-btn" src="./resources/imgs/back.png" alt="" style="height: 6vh;"> </div>
+    </div>
+
+    <div>Created and open-sourced by Antoni Gles <a>GitHub</a></div>
+</body>
+<script src="./resources/js/utils.js"></script>
+<script src="./resources/js/main.js"></script>
+</html>

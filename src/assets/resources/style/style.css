@@ -1,0 +1,121 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow: none;
+}
+
+
+@keyframes bgmotion2 {
+	0% {
+		background-position: 0% 0%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+	50% {
+        background-position: 200% 0%;
+    }
+    75% {
+        background-position: 300% 0%;
+    }
+	100% {
+        background-position: 400% 0%;
+	}
+}
+
+
+
+#bg-image {
+    animation: bgmotion2 400s linear infinite;
+    height: 100%;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(4px);
+    background-size: cover;
+    background: url("../imgs/bgs/panorama.png");
+    position: fixed;
+    top: -5%;
+    left: -5%;
+    min-width: 110%;
+    min-height: 110%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden;
+}
+
+.login-form {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    width: 30vw !important;
+    height: 6vh !important;
+    font-size: 4vh !important;
+    margin: 7px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: white !important;
+    background-color: transparent !important;
+    opacity: 1 !important;
+}
+
+.login-form:active {
+    outline: none !important;
+}
+
+.login-form:focus {
+    outline: none !important;
+}
+
+.login-form::placeholder {
+    color: white;
+    font-size: 2.5vh;
+    font-weight: 100;
+    text-align: center;
+}
+
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black*/
+    opacity: 0.9;
+    color: white;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+    overflow-x: hidden;
+  }

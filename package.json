@@ -1,0 +1,20 @@
+{
+  "name": "minecraft-launcher-elo7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron src/Client.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hxkuc/electron-vibrancy": "^0.1.9",
+    "custom-electron-titlebar": "^3.2.2-hotfix62",
+    "electron": "^8.1.1",
+    "electron-vibrancy": "^0.1.3",
+    "minecraft-launcher-core": "^3.12.0",
+    "slideout": "^1.0.1"
+  }
+}
